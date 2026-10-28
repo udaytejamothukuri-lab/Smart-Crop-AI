@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Print styling for professional summaries */
+@media print {
+  header, nav, footer, .no-print, button:not(.allow-print) {
+    display: none !important;
+  }
+  
+  body {
+    background-color: white !important;
+    color: black !important;
+    font-size: 11pt;
+  }
+
+  .print-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+  }
+
+  .print-page-break {
+    page-break-before: always;
+  }
+
+  .shadow-sm, .shadow-md, .shadow-lg {
+    box-shadow: none !important;
+  }
+
+  .border {
+    border-color: #cbd5e1 !important;
+  }
+}

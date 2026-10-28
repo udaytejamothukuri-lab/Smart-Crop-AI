@@ -1,0 +1,110 @@
+{
+  "info": {
+    "name": "SmartCrop AI API Collection",
+    "description": "Postman API Collection for SmartCrop AI Crop Recommendation System (Problem HACK-P302)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "health"]
+        }
+      }
+    },
+    {
+      "name": "Get Supported Crops",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/crops",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "crops"]
+        }
+      }
+    },
+    {
+      "name": "Generate Recommendations (Profile 1 - Rice Match)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"soilType\": \"clay\",\n  \"season\": \"kharif\",\n  \"ph\": 6.5,\n  \"temperature\": 28,\n  \"rainfall\": 1500,\n  \"humidity\": 80,\n  \"nitrogen\": 130,\n  \"phosphorus\": 30,\n  \"potassium\": 40\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/recommendations",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "recommendations"]
+        }
+      }
+    },
+    {
+      "name": "Generate Recommendations (Missing Nutrients)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"soilType\": \"loamy\",\n  \"season\": \"rabi\",\n  \"ph\": 6.8,\n  \"temperature\": 18,\n  \"rainfall\": 500,\n  \"humidity\": 55\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/recommendations",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "recommendations"]
+        }
+      }
+    },
+    {
+      "name": "Compare Crops",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cropIds\": [\"rice\", \"wheat\"],\n  \"inputProfile\": {\n    \"soilType\": \"clay\",\n    \"season\": \"kharif\",\n    \"ph\": 6.5,\n    \"temperature\": 28,\n    \"rainfall\": 1500,\n    \"humidity\": 80\n  }\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/recommendations/compare",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "recommendations", "compare"]
+        }
+      }
+    },
+    {
+      "name": "Get Recommendation History",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/recommendations?page=1&limit=20",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "recommendations"],
+          "query": [
+            { "key": "page", "value": "1" },
+            { "key": "limit", "value": "20" }
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000",
+      "type": "string"
+    }
+  ]
+}

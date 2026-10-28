@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff; font-family:'Inter',system-ui,sans-serif;">
+  <defs>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14532d"/>
+      <stop offset="100%" stop-color="#166534"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0fdf4"/>
+      <stop offset="100%" stop-color="#dcfce7"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Title Banner -->
+  <rect x="30" y="25" width="900" height="60" rx="12" fill="url(#primaryGrad)" filter="url(#shadow)"/>
+  <text x="50" y="62" fill="#ffffff" font-size="20" font-weight="bold">SmartCrop AI — System Architecture Diagram</text>
+  <text x="750" y="61" fill="#bbf7d0" font-size="12" font-weight="600">Problem ID: HACK-P302</text>
+
+  <!-- Frontend Container -->
+  <rect x="30" y="115" width="270" height="380" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="30" y="115" width="270" height="42" rx="16" fill="#0f172a"/>
+  <text x="45" y="142" fill="#ffffff" font-size="14" font-weight="bold">Client Layer (React + Vite)</text>
+  
+  <rect x="45" y="175" width="240" height="50" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="60" y="196" fill="#0f172a" font-size="12" font-weight="bold">Pages / Views</text>
+  <text x="60" y="212" fill="#64748b" font-size="10">Home • Form • Results • Compare • History</text>
+
+  <rect x="45" y="240" width="240" height="50" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="60" y="261" fill="#0f172a" font-size="12" font-weight="bold">Styling & UI Components</text>
+  <text x="60" y="277" fill="#64748b" font-size="10">Tailwind CSS • Lucide Icons • Print CSS</text>
+
+  <rect x="45" y="305" width="240" height="50" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="60" y="326" fill="#0f172a" font-size="12" font-weight="bold">State & Presets Manager</text>
+  <text x="60" y="342" fill="#64748b" font-size="10">5 Preset Profiles • Session Cache</text>
+
+  <rect x="45" y="370" width="240" height="50" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="60" y="391" fill="#0f172a" font-size="12" font-weight="bold">API Client (Axios)</text>
+  <text x="60" y="407" fill="#64748b" font-size="10">VITE_API_BASE_URL • Network Interceptor</text>
+
+  <rect x="45" y="435" width="240" height="40" rx="8" fill="#ecfdf5" stroke="#a7f3d0"/>
+  <text x="60" y="460" fill="#065f46" font-size="11" font-weight="bold">Deployment Target: Vercel</text>
+
+  <!-- Connectors Frontend -> Backend -->
+  <line x1="300" y1="305" x2="350" y2="305" stroke="#16a34a" stroke-width="3" stroke-dasharray="4"/>
+  <polygon points="348,300 358,305 348,310" fill="#16a34a"/>
+  <text x="303" y="295" fill="#15803d" font-size="9" font-weight="bold">REST / JSON</text>
+
+  <!-- Backend Container -->
+  <rect x="360" y="115" width="290" height="380" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="360" y="115" width="290" height="42" rx="16" fill="#166534"/>
+  <text x="375" y="142" fill="#ffffff" font-size="14" font-weight="bold">Backend Layer (Node + Express)</text>
+
+  <rect x="375" y="175" width="260" height="45" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="390" y="195" fill="#0f172a" font-size="12" font-weight="bold">Express Routing & Middleware</text>
+  <text x="390" y="210" fill="#64748b" font-size="10">CORS • Rate Limiting • 404 & Central Handler</text>
+
+  <rect x="375" y="230" width="260" height="45" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="390" y="250" fill="#0f172a" font-size="12" font-weight="bold">Input Validators</text>
+  <text x="390" y="265" fill="#64748b" font-size="10">Numeric Range • Soil / Season Catalog Checks</text>
+
+  <rect x="375" y="285" width="260" height="60" rx="8" fill="url(#cardGrad)" stroke="#86efac"/>
+  <text x="390" y="306" fill="#14532d" font-size="12" font-weight="bold">Rule-Based Recommendation Engine</text>
+  <text x="390" y="322" fill="#166534" font-size="10">Weighted Evaluation • Coverage Tracking</text>
+  <text x="390" y="335" fill="#166534" font-size="10">Deterministic Tie-Breaking (A-Z fallback)</text>
+
+  <rect x="375" y="355" width="260" height="45" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="390" y="375" fill="#0f172a" font-size="12" font-weight="bold">Controllers & Services</text>
+  <text x="390" y="390" fill="#64748b" font-size="10">Health • Crops • Recommendations • Compare</text>
+
+  <rect x="375" y="410" width="260" height="40" rx="8" fill="#ecfdf5" stroke="#a7f3d0"/>
+  <text x="390" y="435" fill="#065f46" font-size="11" font-weight="bold">Deployment Target: Render (Node.js)</text>
+
+  <!-- Connectors Backend -> Data / Storage -->
+  <line x1="650" y1="240" x2="695" y2="240" stroke="#16a34a" stroke-width="3"/>
+  <polygon points="693,235 703,240 693,245" fill="#16a34a"/>
+
+  <line x1="650" y1="380" x2="695" y2="380" stroke="#0284c7" stroke-width="3"/>
+  <polygon points="693,375 703,380 693,385" fill="#0284c7"/>
+
+  <!-- Data / Persistence Container -->
+  <rect x="705" y="115" width="225" height="380" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="705" y="115" width="225" height="42" rx="16" fill="#0369a1"/>
+  <text x="720" y="142" fill="#ffffff" font-size="14" font-weight="bold">Data & Persistence</text>
+
+  <!-- Agronomic Dataset -->
+  <rect x="715" y="175" width="205" height="110" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="725" y="196" fill="#0f172a" font-size="12" font-weight="bold">Documented Dataset</text>
+  <text x="725" y="212" fill="#166534" font-size="10" font-weight="bold">v1.1.0-icar-fao-documented</text>
+  <text x="725" y="230" fill="#64748b" font-size="10">• ICAR Agriculture Handbook</text>
+  <text x="725" y="245" fill="#64748b" font-size="10">• FAO Ecocrop #1590/2100</text>
+  <text x="725" y="260" fill="#64748b" font-size="10">• 12 Crops with Tolerance Bounds</text>
+
+  <!-- MongoDB Database -->
+  <rect x="715" y="305" width="205" height="115" rx="8" fill="#ffffff" stroke="#bae6fd"/>
+  <text x="725" y="326" fill="#0369a1" font-size="12" font-weight="bold">MongoDB Atlas (Mongoose)</text>
+  <text x="725" y="345" fill="#64748b" font-size="10">• Recommendation Schema</text>
+  <text x="725" y="360" fill="#64748b" font-size="10">• Environmental Inputs Profile</text>
+  <text x="725" y="375" fill="#64748b" font-size="10">• Ranked Results & Explanations</text>
+  <text x="725" y="390" fill="#64748b" font-size="10">• Indexed createdAt Timestamps</text>
+
+  <rect x="715" y="435" width="205" height="40" rx="8" fill="#f0f9ff" stroke="#7dd3fc"/>
+  <text x="725" y="460" fill="#0369a1" font-size="11" font-weight="bold">Managed Cloud Database</text>
+</svg>

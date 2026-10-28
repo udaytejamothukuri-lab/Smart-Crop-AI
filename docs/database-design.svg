@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500" style="background:#ffffff; font-family:'Inter',system-ui,sans-serif;">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0369a1"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <filter id="boxShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Title Banner -->
+  <rect x="30" y="25" width="840" height="55" rx="12" fill="url(#headerGrad)" filter="url(#boxShadow)"/>
+  <text x="50" y="60" fill="#ffffff" font-size="18" font-weight="bold">SmartCrop AI — Database Design (MongoDB Atlas / Mongoose Schema)</text>
+
+  <!-- Collection: recommendations -->
+  <rect x="30" y="105" width="410" height="365" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" filter="url(#boxShadow)"/>
+  <rect x="30" y="105" width="410" height="38" rx="12" fill="#0369a1"/>
+  <text x="45" y="130" fill="#ffffff" font-size="13" font-weight="bold">Collection: recommendations (Primary Document)</text>
+
+  <g transform="translate(45, 155)" font-size="11" fill="#1e293b">
+    <text y="15" font-weight="bold" fill="#0284c7">_id</text><text x="130" y="15" fill="#64748b">ObjectId (Primary Key, Hex24)</text>
+    <text y="35" font-weight="bold">inputProfile</text><text x="130" y="35" fill="#64748b">Object (Nested Soil & Climate Profile)</text>
+    <text x="20" y="52" fill="#475569">├── soilType: String (Enum valid soils)</text>
+    <text x="20" y="67" fill="#475569">├── season: String (kharif, rabi, zaid, whole-year)</text>
+    <text x="20" y="82" fill="#475569">├── ph: Number (0.0 – 14.0)</text>
+    <text x="20" y="97" fill="#475569">├── temperature: Number (°C)</text>
+    <text x="20" y="112" fill="#475569">├── rainfall: Number (mm/season)</text>
+    <text x="20" y="127" fill="#475569">├── humidity: Number (%)</text>
+    <text x="20" y="142" fill="#475569">└── nitrogen, phosphorus, potassium: Number | null</text>
+    
+    <text y="165" font-weight="bold">missingInputs</text><text x="130" y="165" fill="#64748b">[String] (Omitted nutrient/climate fields)</text>
+    <text y="185" font-weight="bold">topCrop</text><text x="130" y="185" fill="#64748b">Object { cropName, category, score }</text>
+    <text y="205" font-weight="bold">methodVersion</text><text x="130" y="205" fill="#64748b">String ("rule-based-v1.0-weighted")</text>
+    <text y="225" font-weight="bold">datasetVersion</text><text x="130" y="225" fill="#64748b">String ("v1.1.0-icar-fao-documented")</text>
+    <text y="245" font-weight="bold">advisory</text><text x="130" y="245" fill="#64748b">String (Standard agricultural disclaimer)</text>
+    <text y="265" font-weight="bold" fill="#059669">createdAt</text><text x="130" y="265" fill="#059669">Date (Indexed for chronological sorting)</text>
+    <text y="285" font-weight="bold">recommendations</text><text x="130" y="285" fill="#64748b">[RecommendedCropSchema] (Sub-documents)</text>
+  </g>
+
+  <!-- Embedded Schema: RecommendedCropSchema -->
+  <rect x="470" y="105" width="400" height="365" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" filter="url(#boxShadow)"/>
+  <rect x="470" y="105" width="400" height="38" rx="12" fill="#15803d"/>
+  <text x="485" y="130" fill="#ffffff" font-size="13" font-weight="bold">Subdocument: RecommendedCropSchema</text>
+
+  <g transform="translate(485, 155)" font-size="11" fill="#1e293b">
+    <text y="15" font-weight="bold">cropId</text><text x="140" y="15" fill="#64748b">String (e.g. "rice", "wheat")</text>
+    <text y="35" font-weight="bold">cropName</text><text x="140" y="35" fill="#64748b">String (Common name)</text>
+    <text y="55" font-weight="bold">botanicalName</text><text x="140" y="55" fill="#64748b">String (e.g. "Oryza sativa")</text>
+    <text y="75" font-weight="bold">category</text><text x="140" y="75" fill="#64748b">String ("Cereal", "Pulse", etc.)</text>
+    <text y="95" font-weight="bold">rank</text><text x="140" y="95" fill="#64748b">Number (Deterministic 1-indexed order)</text>
+    <text y="115" font-weight="bold" fill="#15803d">suitabilityCategory</text><text x="140" y="115" fill="#15803d">Enum (High, Moderate, Low, Insufficient)</text>
+    <text y="135" font-weight="bold">score</text><text x="140" y="135" fill="#64748b">Number | null (Normalized percentage)</text>
+    <text y="155" font-weight="bold">coveragePercentage</text><text x="140" y="155" fill="#64748b">Number (Active weight / 100)</text>
+    <text y="175" font-weight="bold">matchingFactors</text><text x="140" y="175" fill="#64748b">[String] (Positive physiological matches)</text>
+    <text y="195" font-weight="bold">unmetFactors</text><text x="140" y="195" fill="#64748b">[String] (Factors outside bounds)</text>
+    <text y="215" font-weight="bold">missingFactors</text><text x="140" y="215" fill="#64748b">[String] (Omitted data inputs)</text>
+    <text y="235" font-weight="bold">explanation</text><text x="140" y="235" fill="#64748b">String (Heuristic rationale synthesis)</text>
+    <text y="255" font-weight="bold">limitations</text><text x="140" y="255" fill="#64748b">[String] (Crop physiological assumptions)</text>
+    <text y="275" font-weight="bold">growingPeriodDays</text><text x="140" y="275" fill="#64748b">String (e.g. "110-150")</text>
+    <text y="295" font-weight="bold">source</text><text x="140" y="295" fill="#64748b">String (ICAR / FAO citation)</text>
+  </g>
+</svg>
