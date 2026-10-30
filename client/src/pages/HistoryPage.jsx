@@ -24,6 +24,7 @@ export default function HistoryPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [dbOffline, setDbOffline] = useState(false);
+  const [storageMode, setStorageMode] = useState('in_memory');
   const [deletingId, setDeletingId] = useState(null);
 
   const fetchHistory = async () => {
@@ -33,6 +34,7 @@ export default function HistoryPage() {
     try {
       const data = await getRecommendationHistory();
       setRecords(data.records || []);
+      setStorageMode(data.storageMode || 'in_memory');
     } catch (err) {
       if (err.message.includes('Database') || err.message.includes('503') || err.message.includes('MongoDB')) {
         setDbOffline(true);
@@ -65,7 +67,7 @@ export default function HistoryPage() {
 
   const handleDelete = async (id, e) => {
     e.stopPropagation();
-    if (!window.confirm('Are you sure you want to delete this saved recommendation record from the database?')) {
+    if (!window.confirm('Are you sure you want to delete this saved recommendation record?')) {
       return;
     }
 
@@ -92,7 +94,7 @@ export default function HistoryPage() {
             Recommendation History
           </h1>
           <p className="text-sm text-gray-600 mt-1">
-            Persisted recommendation queries retrieved from MongoDB Atlas.
+            Persisted recommendation queries retrieved from {storageMode === 'mongodb' ? 'MongoDB Atlas' : 'Active Session Memory'}.
           </p>
         </div>
 
@@ -115,6 +117,27 @@ export default function HistoryPage() {
         </div>
       </div>
 
+      {/* Storage Mode Notice */}
+      {storageMode === 'in_memory' && (
+        <div className="bg-sky-50 border border-sky-200 rounded-2xl p-4 mb-6 text-sky-950 flex items-start gap-3 text-xs sm:text-sm">
+          <Database className="w-5 h-5 text-sky-600 flex-shrink-0 mt-0.5" />
+          <div className="flex-1">
+            <div className="flex items-center gap-2 mb-1 flex-wrap">
+              <span className="font-bold text-sky-900">Session Memory Mode Active</span>
+              <span className="bg-sky-200/80 text-sky-800 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
+                Standalone Offline Mode
+              </span>
+            </div>
+            <p className="text-xs text-sky-800 leading-relaxed mb-2">
+              Recommendations generated during this session are stored directly in active server memory. You can inspect full factor breakdowns, reload past queries, or delete entries seamlessly.
+            </p>
+            <div className="text-[11px] text-sky-700 bg-white/70 border border-sky-200/60 rounded-lg p-2 font-mono">
+              💡 To enable permanent cloud persistence across server restarts, set <code>MONGODB_URI=...</code> in <code>server/.env</code>.
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Non-Private Notice (Mandated by Section 5.E: No fake auth) */}
       <div className="bg-amber-50/70 border border-amber-200 rounded-2xl p-4 mb-8 flex items-start gap-3 text-amber-950 text-xs sm:text-sm">
         <Info className="w-5 h-5 text-amber-700 flex-shrink-0 mt-0.5" />
@@ -124,19 +147,16 @@ export default function HistoryPage() {
         </div>
       </div>
 
-      {/* DB Offline Alert if Mongo is down */}
+      {/* DB Offline Alert if Mongo is down AND in-memory also failed */}
       {dbOffline && (
         <div className="bg-rose-50 border border-rose-200 rounded-2xl p-6 mb-8 text-rose-950">
           <div className="flex items-center gap-2 font-bold text-base mb-2">
             <Database className="w-5 h-5 text-rose-600" />
-            MongoDB Persistence Unavailable
+            Database Service Unavailable
           </div>
           <p className="text-xs sm:text-sm leading-relaxed mb-4">
-            The backend is currently operating without an active MongoDB connection. The rule-based recommendation engine continues to function in real-time in standalone memory mode, but history retrieval and permanent persistence require a configured MongoDB URI.
+            Could not retrieve history records: {error}
           </p>
-          <div className="bg-white/80 p-3 rounded-xl border border-rose-200 font-mono text-xs text-rose-900">
-            Set <code>MONGODB_URI=mongodb+srv://...</code> in <code>server/.env</code> and restart the server.
-          </div>
         </div>
       )}
 
