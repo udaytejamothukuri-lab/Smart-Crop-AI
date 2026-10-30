@@ -284,7 +284,7 @@ export default function AboutPage() {
           {/* Member 4: Data / Testing */}
           <div className="p-4 rounded-xl border border-gray-200 bg-gray-50/50">
             <div className="flex items-center justify-between mb-1">
-              <span className="font-bold text-sm text-gray-900">Gannamaneni JBL Narasimha Swamy</span>
+              <span className="font-bold text-sm text-gray-900">Gannimani JBL Nara Simha Swamy</span>
               <span className="text-[10px] bg-gray-200 text-gray-700 font-bold px-2 py-0.5 rounded-full">Data / Testing</span>
             </div>
             <p className="text-gray-600 mb-2">Roll No: <strong>25MVCSDR0555</strong> • Branch: <strong>CSE (Data Science)</strong></p>

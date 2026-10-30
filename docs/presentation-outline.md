@@ -15,7 +15,7 @@
   * Thanveesh Lingala (Team Lead): Architecture & Recommendation Engine (`25MVCSDR0565`)
   * Uday Teja Mothukuri (Backend Developer): REST APIs & Persistence Architecture (`25MVCSDR0571`)
   * Ushakoyala Hema Chandra Sai (Frontend Developer): React Dashboard & Crop Comparison UI (`25MVCSDR0590`)
-  * Gannamaneni JBL Narasimha Swamy (Data / Testing): ICAR/FAO Agronomic Datasets & Automated Testing (`25MVCSDR0555`)
+  * Gannimani JBL Nara Simha Swamy (Data / Testing): ICAR/FAO Agronomic Datasets & Automated Testing (`25MVCSDR0555`)
 
 ---
 

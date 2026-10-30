@@ -308,7 +308,7 @@ Collaborative project developed by four students from CSE (Data Science):
 | **Thanveesh Lingala** | `25MVCSDR0565` | CSE (Data Science) | **Team Lead**: Overall architecture, rule-based recommendation engine (`recommendationEngine.js`), deterministic tie-breaking logic. |
 | **Uday Teja Mothukuri** | `25MVCSDR0571` | CSE (Data Science) | **Backend Developer**: REST APIs, session in-memory & MongoDB persistence lifecycles, validation middleware, backend test suites. |
 | **Ushakoyala Hema Chandra Sai** | `25MVCSDR0590` | CSE (Data Science) | **Frontend Developer**: React dashboard, responsive Tailwind UI, crop comparison matrix, print stylesheets, client API integration. |
-| **Gannamaneni JBL Narasimha Swamy** | `25MVCSDR0555` | CSE (Data Science) | **Data / Testing**: ICAR/FAO dataset research (`crops.js`), unit conversion validation, automated test suites, presentation documentation. |
+| **Gannimani JBL Nara Simha Swamy** | `25MVCSDR0555` | CSE (Data Science) | **Data / Testing**: ICAR/FAO dataset research (`crops.js`), unit conversion validation, automated test suites, presentation documentation. |
 
 ---
 
