@@ -301,14 +301,14 @@ npm test
 ---
 
 ## 17. Team Information & Contributions (HACK-P302)
-Collaborative project developed by four students from the same section:
+Collaborative project developed by four students from CSE (Data Science):
 
-| Member Name | Roll Number | Branch / Section | Key Technical Contribution |
+| Member Name | Roll Number | Branch / Specialization | Key Technical Contribution |
 | :--- | :--- | :--- | :--- |
-| **[STUDENT_NAME_1_LEAD_PLACEHOLDER]** | `[STUDENT_ROLL_1_PLACEHOLDER]` | CSE / Sec A | **Team Lead**: Overall architecture, rule-based recommendation engine (`recommendationEngine.js`), deterministic tie-breaking logic. |
-| **[STUDENT_NAME_2_PLACEHOLDER]** | `[STUDENT_ROLL_2_PLACEHOLDER]` | CSE / Sec A | **Backend & Database**: MongoDB Atlas connection lifecycle, Mongoose schemas, history CRUD API endpoints, input validation middleware. |
-| **[STUDENT_NAME_3_PLACEHOLDER]** | `[STUDENT_ROLL_3_PLACEHOLDER]` | CSE / Sec A | **Frontend UI/UX**: React dashboard, responsive Tailwind agriculture theme, crop comparison matrix, print stylesheets, client API client. |
-| **[STUDENT_NAME_4_PLACEHOLDER]** | `[STUDENT_ROLL_4_PLACEHOLDER]` | CSE / Sec A | **Agronomic Data & Testing**: ICAR/FAO dataset research (`crops.js`), unit conversion validation, automated backend & profile test suites, documentation. |
+| **Thanveesh Lingala** | `25MVCSDR0565` | CSE (Data Science) | **Team Lead**: Overall architecture, rule-based recommendation engine (`recommendationEngine.js`), deterministic tie-breaking logic. |
+| **Uday Teja Mothukuri** | `25MVCSDR0571` | CSE (Data Science) | **Backend Developer**: REST APIs, session in-memory & MongoDB persistence lifecycles, validation middleware, backend test suites. |
+| **Ushakoyala Hema Chandra Sai** | `25MVCSDR0590` | CSE (Data Science) | **Frontend Developer**: React dashboard, responsive Tailwind UI, crop comparison matrix, print stylesheets, client API integration. |
+| **Gannamaneni JBL Narasimha Swamy** | `25MVCSDR0555` | CSE (Data Science) | **Data / Testing**: ICAR/FAO dataset research (`crops.js`), unit conversion validation, automated test suites, presentation documentation. |
 
 ---
 

@@ -248,46 +248,46 @@ export default function AboutPage() {
           {/* Member 1: Team Lead */}
           <div className="p-4 rounded-xl border border-agri-200 bg-agri-50/50">
             <div className="flex items-center justify-between mb-1">
-              <span className="font-bold text-sm text-agri-950">Team Member 1 (Team Lead)</span>
-              <span className="text-[10px] bg-agri-200 text-agri-900 font-bold px-2 py-0.5 rounded-full">Lead</span>
+              <span className="font-bold text-sm text-agri-950">Thanveesh Lingala</span>
+              <span className="text-[10px] bg-agri-200 text-agri-900 font-bold px-2 py-0.5 rounded-full">Team Lead</span>
             </div>
-            <p className="text-gray-600 mb-2">Roll No: <strong>[STUDENT_ROLL_1_PLACEHOLDER]</strong> • Branch: CSE / IT</p>
+            <p className="text-gray-600 mb-2">Roll No: <strong>25MVCSDR0565</strong> • Branch: <strong>CSE (Data Science)</strong></p>
             <p className="text-gray-700 leading-relaxed">
               <strong>Contribution:</strong> Architecture design, Rule-based Recommendation Engine implementation, API routing, deterministic tie-breaking logic.
             </p>
           </div>
 
-          {/* Member 2 */}
+          {/* Member 2: Backend Developer */}
           <div className="p-4 rounded-xl border border-gray-200 bg-gray-50/50">
             <div className="flex items-center justify-between mb-1">
-              <span className="font-bold text-sm text-gray-900">Team Member 2</span>
-              <span className="text-[10px] bg-gray-200 text-gray-700 font-bold px-2 py-0.5 rounded-full">Member</span>
+              <span className="font-bold text-sm text-gray-900">Uday Teja Mothukuri</span>
+              <span className="text-[10px] bg-gray-200 text-gray-700 font-bold px-2 py-0.5 rounded-full">Backend Developer</span>
             </div>
-            <p className="text-gray-600 mb-2">Roll No: <strong>[STUDENT_ROLL_2_PLACEHOLDER]</strong> • Branch: CSE / IT</p>
+            <p className="text-gray-600 mb-2">Roll No: <strong>25MVCSDR0571</strong> • Branch: <strong>CSE (Data Science)</strong></p>
             <p className="text-gray-700 leading-relaxed">
-              <strong>Contribution:</strong> Database schema & Mongoose persistence, MongoDB connection lifecycle, history CRUD routes, validation middleware.
+              <strong>Contribution:</strong> Database schema & persistence, session/MongoDB connection lifecycle, history CRUD routes, validation middleware.
             </p>
           </div>
 
-          {/* Member 3 */}
+          {/* Member 3: Frontend Developer */}
           <div className="p-4 rounded-xl border border-gray-200 bg-gray-50/50">
             <div className="flex items-center justify-between mb-1">
-              <span className="font-bold text-sm text-gray-900">Team Member 3</span>
-              <span className="text-[10px] bg-gray-200 text-gray-700 font-bold px-2 py-0.5 rounded-full">Member</span>
+              <span className="font-bold text-sm text-gray-900">Ushakoyala Hema Chandra Sai</span>
+              <span className="text-[10px] bg-gray-200 text-gray-700 font-bold px-2 py-0.5 rounded-full">Frontend Developer</span>
             </div>
-            <p className="text-gray-600 mb-2">Roll No: <strong>[STUDENT_ROLL_3_PLACEHOLDER]</strong> • Branch: CSE / IT</p>
+            <p className="text-gray-600 mb-2">Roll No: <strong>25MVCSDR0590</strong> • Branch: <strong>CSE (Data Science)</strong></p>
             <p className="text-gray-700 leading-relaxed">
               <strong>Contribution:</strong> React dashboard, responsive Tailwind UI, crop comparison matrix, print styling, client error handling.
             </p>
           </div>
 
-          {/* Member 4 */}
+          {/* Member 4: Data / Testing */}
           <div className="p-4 rounded-xl border border-gray-200 bg-gray-50/50">
             <div className="flex items-center justify-between mb-1">
-              <span className="font-bold text-sm text-gray-900">Team Member 4</span>
-              <span className="text-[10px] bg-gray-200 text-gray-700 font-bold px-2 py-0.5 rounded-full">Member</span>
+              <span className="font-bold text-sm text-gray-900">Gannamaneni JBL Narasimha Swamy</span>
+              <span className="text-[10px] bg-gray-200 text-gray-700 font-bold px-2 py-0.5 rounded-full">Data / Testing</span>
             </div>
-            <p className="text-gray-600 mb-2">Roll No: <strong>[STUDENT_ROLL_4_PLACEHOLDER]</strong> • Branch: CSE / IT</p>
+            <p className="text-gray-600 mb-2">Roll No: <strong>25MVCSDR0555</strong> • Branch: <strong>CSE (Data Science)</strong></p>
             <p className="text-gray-700 leading-relaxed">
               <strong>Contribution:</strong> ICAR/FAO dataset research, unit conversion verification, automated backend & profile testing, documentation & slide deck.
             </p>

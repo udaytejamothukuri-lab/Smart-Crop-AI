@@ -11,11 +11,11 @@
 * **Title:** SmartCrop AI — Intelligent Crop Recommendation System
 * **Subtitle:** Transparent, Deterministic Decision-Support Engine for Agro-Ecological Planning
 * **Problem Statement ID:** HACK-P302
-* **Team Details:** 4 Students, CSE / IT Department
-  * Student 1 (Team Lead): Architecture & Recommendation Engine (`[STUDENT_ROLL_1_PLACEHOLDER]`)
-  * Student 2: Database Persistence & REST APIs (`[STUDENT_ROLL_2_PLACEHOLDER]`)
-  * Student 3: React Dashboard & Crop Comparison UI (`[STUDENT_ROLL_3_PLACEHOLDER]`)
-  * Student 4: ICAR/FAO Agronomic Datasets & Automated Testing (`[STUDENT_ROLL_4_PLACEHOLDER]`)
+* **Team Details:** 4 Students, CSE (Data Science)
+  * Thanveesh Lingala (Team Lead): Architecture & Recommendation Engine (`25MVCSDR0565`)
+  * Uday Teja Mothukuri (Backend Developer): REST APIs & Persistence Architecture (`25MVCSDR0571`)
+  * Ushakoyala Hema Chandra Sai (Frontend Developer): React Dashboard & Crop Comparison UI (`25MVCSDR0590`)
+  * Gannamaneni JBL Narasimha Swamy (Data / Testing): ICAR/FAO Agronomic Datasets & Automated Testing (`25MVCSDR0555`)
 
 ---
 
