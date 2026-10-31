@@ -170,6 +170,7 @@ cp .env.example .env
   npm start
   # Server listening on http://localhost:5000
   ```
+  *(On Windows PowerShell, if script execution is restricted, use `npm.cmd start`)*
 
 * **Terminal 2 (Frontend Client):**
   ```bash
@@ -177,12 +178,43 @@ cp .env.example .env
   npm run dev
   # Client running on http://localhost:5173
   ```
+  *(On Windows PowerShell, if script execution is restricted, use `npm.cmd run dev`)*
 
-Open your browser at `http://localhost:5173`.
+> [!TIP]
+> **Windows PowerShell Execution Policy Note:** If you see an error about `npm.ps1 cannot be loaded`, run:
+> ```powershell
+> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+> ```
+> or run commands with `.cmd` (e.g., `npm.cmd start`, `npm.cmd run dev`).
 
 ---
 
-## 10. Environment Variables
+## 10. Application URLs & Navigation Map
+
+### Frontend Client Pages (`http://localhost:5173`)
+| Page / View | URL Route | Description |
+| :--- | :--- | :--- |
+| **Home Dashboard** | [`http://localhost:5173/`](http://localhost:5173/) | System health status, workflow guide, and advisory disclaimer |
+| **Recommendation Form** | [`http://localhost:5173/recommend`](http://localhost:5173/recommend) | 9 soil/climate inputs with 5 instant preset profile buttons |
+| **Results View** | [`http://localhost:5173/results`](http://localhost:5173/results) | Ranked suitability output with matched/unmet factor breakdowns |
+| **Crop Comparison** | [`http://localhost:5173/compare`](http://localhost:5173/compare) | Side-by-side comparison matrix for 2 to 4 crops |
+| **History Archive** | [`http://localhost:5173/history`](http://localhost:5173/history) | Searchable query history stored in MongoDB with record deletion |
+| **Methodology & About** | [`http://localhost:5173/methodology`](http://localhost:5173/methodology) | Scoring formulas, ICAR/FAO citations, and team credentials |
+
+### Backend API Endpoints (`http://localhost:5000`)
+| HTTP Method | Endpoint | Local URL | Description |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/health` | `http://localhost:5000/api/health` | Backend status, uptime & database connectivity check |
+| `GET` | `/api/crops` | `http://localhost:5000/api/crops` | Agronomic bounds dataset for all 12 supported crops |
+| `POST` | `/api/recommendations` | `http://localhost:5000/api/recommendations` | Evaluates soil/climate profile & saves recommendation |
+| `GET` | `/api/recommendations` | `http://localhost:5000/api/recommendations` | Retrieves recommendation history (`?limit=` & `?page=`) |
+| `GET` | `/api/recommendations/:id` | `http://localhost:5000/api/recommendations/:id` | Retrieves single saved recommendation by ObjectId |
+| `DELETE` | `/api/recommendations/:id` | `http://localhost:5000/api/recommendations/:id` | Deletes a saved recommendation record |
+| `POST` | `/api/recommendations/compare` | `http://localhost:5000/api/recommendations/compare` | Side-by-side evaluation of 2–4 selected crops |
+
+---
+
+## 11. Environment Variables
 
 ### Server (`server/.env`)
 ```ini
@@ -201,21 +233,12 @@ VITE_API_BASE_URL=http://localhost:5000/api
 
 ---
 
-## 11. API Documentation
+## 12. API Documentation
 Complete endpoint specifications, schemas, and status codes are documented in [`docs/api-documentation.md`](docs/api-documentation.md). A ready-to-import collection is provided in [`docs/postman_collection.json`](docs/postman_collection.json).
-
-### Key Endpoints
-* `GET /api/health` — Checks backend status, uptime, and database connection.
-* `GET /api/crops` — Lists all 12 supported crops and agronomic tolerance bounds.
-* `POST /api/recommendations` — Evaluates soil profile and persists result to MongoDB.
-* `GET /api/recommendations` — Retrieves paginated recommendation history.
-* `GET /api/recommendations/:id` — Retrieves a specific recommendation by ObjectId.
-* `DELETE /api/recommendations/:id` — Deletes a saved record.
-* `POST /api/recommendations/compare` — Compares 2 to 4 crops side-by-side.
 
 ---
 
-## 12. Database Design
+## 13. Database Design
 * **Database:** MongoDB Atlas (Cloud NoSQL)
 * **ODM:** Mongoose v8.9.5
 * **Primary Collection:** `recommendations`
@@ -228,7 +251,7 @@ Complete endpoint specifications, schemas, and status codes are documented in [`
 
 ---
 
-## 13. Recommendation Methodology
+## 14. Recommendation Methodology
 Full mathematical formulation and scoring rules are documented in [`docs/recommendation-method.md`](docs/recommendation-method.md).
 
 ### Weighting Breakdown:
@@ -246,7 +269,7 @@ $$\text{Normalized Score} = \text{round}\left( \frac{\sum S_{\text{earned}}}{\su
 
 ---
 
-## 14. Data Sources and Agronomic Assumptions
+## 15. Data Sources and Agronomic Assumptions
 Full citations and laboratory standards are documented in [`docs/dataset-assumptions.md`](docs/dataset-assumptions.md).
 * **ICAR Handbook of Agriculture (6th Edition):** Indian Council of Agricultural Research guidelines.
 * **FAO Ecocrop Database & Irrigation/Drainage Paper 56:** Thermal requirements and seasonal water duties.
@@ -254,7 +277,7 @@ Full citations and laboratory standards are documented in [`docs/dataset-assumpt
 
 ---
 
-## 15. Testing Instructions & Actual Results
+## 16. Testing Instructions & Actual Results
 Automated test suite contains **25 verified tests with a 100% pass rate**. Full test execution report is in [`docs/test-report.md`](docs/test-report.md).
 
 ### Run Backend Tests:
@@ -280,7 +303,7 @@ npm test
 
 ---
 
-## 16. Deployment Instructions
+## 17. Deployment Instructions
 
 ### Frontend (Vercel)
 1. Push repository to GitHub.
@@ -300,7 +323,7 @@ npm test
 
 ---
 
-## 17. Team Information & Contributions (HACK-P302)
+## 18. Team Information & Contributions (HACK-P302)
 Collaborative project developed by four students from CSE (Data Science):
 
 | Member Name | Roll Number | Branch / Specialization | Key Technical Contribution |
@@ -312,7 +335,7 @@ Collaborative project developed by four students from CSE (Data Science):
 
 ---
 
-## 18. Limitations and Future Scope
+## 19. Limitations and Future Scope
 * **Current Limitations:**
   * Heuristic decision-support system; does not forecast financial market prices or disease epidemics.
   * Assumes uniform field parcels without localized salinity patches or drainage anomalies.
@@ -323,7 +346,8 @@ Collaborative project developed by four students from CSE (Data Science):
 
 ---
 
-## 19. Acknowledgements
+## 20. Acknowledgements
 * Indian Council of Agricultural Research (ICAR) for published agronomic benchmarks.
 * Food and Agriculture Organization (FAO) for Ecocrop physiological data.
 * Hackathon organizers for problem statement HACK-P302.
+
