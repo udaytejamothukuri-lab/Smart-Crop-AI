@@ -1,13 +1,20 @@
 import axios from 'axios';
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api';
+let rawBase = (import.meta.env.VITE_API_BASE_URL || '/api').trim();
+if (rawBase.endsWith('/')) {
+  rawBase = rawBase.slice(0, -1);
+}
+if (rawBase.startsWith('http') && !rawBase.endsWith('/api')) {
+  rawBase = `${rawBase}/api`;
+}
+const API_BASE = rawBase;
 
 export const apiClient = axios.create({
   baseURL: API_BASE,
   headers: {
     'Content-Type': 'application/json'
   },
-  timeout: 15000
+  timeout: 30000
 });
 
 // Interceptor for consistent error handling
